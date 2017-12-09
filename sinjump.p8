@@ -45,14 +45,6 @@ function _update()
   if x>127 or x<0 then
    direction=-direction
   end 
-
---  y=y+dh
-  --[[
-  if y>127 or y<0 then
-   ys=ys*-1
-  end
-  --]]
-
   
 end
 
