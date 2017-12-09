@@ -1,10 +1,14 @@
 pico-8 cartridge // http://www.pico-8.com
 version 15
 __lua__
+
+ground_height = 100
+
 x = 0
 y = 64
 xs = 1
 radians = 0
+dy = 0
 
 function _init()
 end
@@ -24,12 +28,15 @@ function _update()
   if (radians==128) then
    radians=0
   end
+
+  dy = sin(radians/128) * 64
+  
 end
 
 function _draw()
-	 cls()
-  local diff = sin(radians/128) * 64
-  spr(0, x, y+diff)
+  rectfill(0, 0, 127, ground_height, 12)
+  rectfill(0, ground_height, 127, 127, 3)
+  spr(0, x, y+dy)  
 end
 
 	
